@@ -1,0 +1,110 @@
+﻿<Window x:Class="LayoutBuilder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LayoutBuilder"
+        mc:Ignorable="d"
+        Title="LayoutBuilder" Height="380" Width="500">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Width" Value="55"/>
+            <Setter Property="DockPanel.Dock" Value="Right"/>
+        </Style>
+        <Style TargetType="DockPanel">
+            <Setter Property="LastChildFill" Value="False"/>
+        </Style>
+    </Window.Resources>
+    <DockPanel Margin="10,0,10,10">
+        <GroupBox Header="Border"
+            DockPanel.Dock="Left"
+            Width="150">
+            <StackPanel>
+                <DockPanel>
+                    <TextBlock Text="thickness"/>
+                    <TextBox x:Name="txtBorderThickness" Text="2"/>
+                </DockPanel>
+                <DockPanel>
+                    <TextBlock Text="radius"/>
+                    <TextBox x:Name="txtBorderRadius" Text="10"/>
+                </DockPanel>
+                <DockPanel>
+                    <TextBlock Text="red"/>
+                    <TextBox x:Name="txtBorderRed" Text="255"/>
+                </DockPanel>
+                <DockPanel>
+                    <TextBlock Text="green"/>
+                    <TextBox x:Name="txtBorderGreen" Text="0"/>
+                </DockPanel>
+                <DockPanel>
+                    <TextBlock Text="blue"/>
+                    <TextBox x:Name="txtBorderBlue" Text="0"/>
+                </DockPanel>
+                <TextBlock Text="Background" Margin="0,10,0,0"/>
+                <DockPanel>
+                    <TextBlock Text="red"/>
+                    <TextBox x:Name="txtBackgroundRed" Text="255"/>
+                </DockPanel>
+                <DockPanel>
+                    <TextBlock Text="green"/>
+                    <TextBox x:Name="txtBackgroundGreen" Text="255"/>
+                </DockPanel>
+                <DockPanel>
+                    <TextBlock Text="blue"/>
+                    <TextBox x:Name="txtBackgroundBlue" Text="0"/>
+                </DockPanel>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Symbol"
+            DockPanel.Dock="Right"
+            Width="300">
+            <StackPanel>
+                <DockPanel>
+                    <TextBlock Text="left normal/shift/control_menu"/>
+                    <TextBox x:Name="txtSymbolLeft" Text="5/23/23"/>
+                </DockPanel>
+                <DockPanel>
+                    <TextBlock Text="top normal/shift/control_menu"/>
+                    <TextBox x:Name="txtSymbolTop" Text="2/3/20"/>
+                </DockPanel>
+                <DockPanel>
+                    <TextBlock Text="size normal/shift/control_menu"/>
+                    <TextBox x:Name="txtSymbolSize" Text="30/16/16"/>
+                </DockPanel>
+                <DockPanel>
+                    <TextBlock Text="font name"/>
+                    <TextBox x:Name="txtSymbolFontName" Text="JetBrains Mono" Width="90"/>
+                </DockPanel>
+                <DockPanel>
+                    <TextBlock Text="font weight"/>
+                    <TextBox x:Name="txtSymbolFontWeight" Text="Normal"/>
+                </DockPanel>
+                <DockPanel>
+                    <TextBlock Text="red"/>
+                    <TextBox x:Name="txtSymbolRed" Text="0"/>
+                </DockPanel>
+                <DockPanel>
+                    <TextBlock Text="green"/>
+                    <TextBox x:Name="txtSymbolGreen" Text="0"/>
+                </DockPanel>
+                <DockPanel>
+                    <TextBlock Text="blue"/>
+                    <TextBox x:Name="txtSymbolBlue" Text="255"/>
+                </DockPanel>
+                <StackPanel Orientation="Horizontal"
+                    Height="150"
+                    Margin="0,10,0,0">
+                    <ListBox x:Name="lbxLangs"
+                         Width="60"
+                          SelectionMode="Multiple">
+                    </ListBox>
+                    <Button Name="btnBuild"
+                        Width="50"
+                        Height="20"
+                        Margin="20,0,0,0"
+                    Content="Build" Click="btnBuild_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+    </DockPanel>
+</Window>
